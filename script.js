@@ -21,10 +21,10 @@ drawBtn.addEventListener('click', () => {
     .then((data) => {
       console.log(data);
       cardsHolder.children[0].innerHTML = `
-      <img src=${data.cards[0].image} />
+      <img src=${data.cards[0].image} class="drawn-card" />
       `;
       cardsHolder.children[1].innerHTML = `
-      <img src=${data.cards[1].image} />
+      <img src=${data.cards[1].image} class="drawn-card" />
       `;
     });
 });
