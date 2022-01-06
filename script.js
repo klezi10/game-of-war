@@ -59,8 +59,6 @@ function determineWinningCard(card1, card2) {
 
   const card1ValueIndex = valueOptions.indexOf(card1.value);
   const card2ValueIndex = valueOptions.indexOf(card2.value);
-  console.log('card 1:', card1ValueIndex);
-  console.log('card 2:', card2ValueIndex);
 
   if (card1ValueIndex > card2ValueIndex) {
     computerScore++;
