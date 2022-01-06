@@ -12,7 +12,7 @@ function handleNewDeck() {
     .then((response) => response.json())
     .then((data) => {
       deckId = data.deck_id;
-      remainingCards.textContent = `Remaining: ${data.remaining}`;
+      remainingCards.textContent = `Remaining cards: ${data.remaining}`;
     });
 }
 
@@ -29,7 +29,10 @@ drawBtn.addEventListener('click', () => {
       `;
       const winningText = determineWinningCard(data.cards[0], data.cards[1]);
       gameText.textContent = winningText;
-      remainingCards.textContent = `Remaining: ${data.remaining}`;
+      remainingCards.textContent = `Remaining cards: ${data.remaining}`;
+      if (data.remaining === 0) {
+        drawBtn.disabled = true;
+      }
     });
 });
 
