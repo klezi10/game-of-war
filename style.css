@@ -25,6 +25,15 @@ body {
   flex-direction: column;
 }
 
+.game-top {
+  display: flex;
+  flex-direction: row;
+}
+
+#remaining {
+  margin-left: 20px;
+}
+
 button {
   background: yellow;
   border: none;
@@ -35,6 +44,7 @@ button {
 
 #new-deck {
   margin-left: 0;
+  padding: 0.7em 1em;
 }
 
 .draw {
