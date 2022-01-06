@@ -4,6 +4,10 @@ const drawBtn = document.getElementById('draw-btn');
 const cardsHolder = document.getElementById('cards');
 const remainingCards = document.getElementById('remaining');
 const gameText = document.getElementById('game-header');
+let computerScore = 0;
+let computerScoreTotal = document.getElementById('computer-score');
+let yourScore = 0;
+let yourScoreTotal = document.getElementById('your-score');
 
 newDeck.addEventListener('click', handleNewDeck);
 
@@ -59,8 +63,12 @@ function determineWinningCard(card1, card2) {
   console.log('card 2:', card2ValueIndex);
 
   if (card1ValueIndex > card2ValueIndex) {
+    computerScore++;
+    computerScoreTotal.innerHTML = computerScore;
     return 'Computer wins!';
   } else if (card1ValueIndex < card2ValueIndex) {
+    yourScore++;
+    yourScoreTotal.innerHTML = yourScore;
     return 'You win!';
   } else {
     return 'War!';

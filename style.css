@@ -50,14 +50,15 @@ button {
 .draw {
   padding: 0.7em 1em;
   display: block;
-  margin: 50px auto 30px;
+  margin: 10px auto 30px;
 }
 
 button:disabled {
   cursor: not-allowed;
 }
 
-h2 {
+h2,
+h3 {
   text-align: center;
 }
 
