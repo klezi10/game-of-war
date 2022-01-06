@@ -36,6 +36,7 @@ drawBtn.addEventListener('click', () => {
       remainingCards.textContent = `Remaining cards: ${data.remaining}`;
       if (data.remaining === 0) {
         drawBtn.disabled = true;
+        checkForWinner();
       }
     });
 });
@@ -72,6 +73,16 @@ function determineWinningCard(card1, card2) {
     return 'You win!';
   } else {
     return 'War!';
+  }
+}
+
+function checkForWinner() {
+  if (computerScore > yourScore) {
+    gameText.textContent = `Game over! Computer wins!`;
+  } else if (computerScore < yourScore) {
+    gameText.textContent = `Game over! You win!`;
+  } else {
+    gameText.textContent = `Game over! Draw!`;
   }
 }
 
