@@ -11,20 +11,19 @@ const yourScoreTotal = document.getElementById('your-score');
 
 newDeck.addEventListener('click', handleNewDeck);
 
-function handleNewDeck() {
-  fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-    .then((response) => response.json())
-    .then((data) => {
-      deckId = data.deck_id;
-      remainingCards.textContent = `Remaining cards: ${data.remaining}`;
-    });
+async function handleNewDeck() {
+  const response = await fetch(
+    'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1'
+  );
+  const data = await response.json();
+  deckId = data.deck_id;
+  remainingCards.textContent = `Remaining cards: ${data.remaining}`;
 }
 
 drawBtn.addEventListener('click', () => {
   fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       cardsHolder.children[0].innerHTML = `
       <img src=${data.cards[0].image} class="drawn-card" />
       `;
