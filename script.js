@@ -82,7 +82,7 @@ function checkForWinner() {
   } else if (computerScore < yourScore) {
     gameText.textContent = `Game over! You win!`;
   } else {
-    gameText.textContent = `Game over! Draw!`;
+    gameText.textContent = `Game over! It's a tie!`;
   }
 }
 
