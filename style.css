@@ -18,8 +18,9 @@ body {
 .app {
   background: url(images/table.png);
   background-repeat: no-repeat;
-  border: 1px solid black;
+  border: 1px solid #017938;
   border-radius: 5px;
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
 }
@@ -37,7 +38,7 @@ button {
 }
 
 .draw {
-  padding: 5px 8px;
+  padding: 0.7em 1em;
   display: block;
   margin: 50px auto 30px;
 }
